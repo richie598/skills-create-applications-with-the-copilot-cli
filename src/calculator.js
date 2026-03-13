@@ -62,8 +62,20 @@ if (require.main === module) {
   const a = parseFloat(num1);
   const b = parseFloat(num2);
 
-  if (!operation || isNaN(a) || isNaN(b)) {
-    console.error('Usage: node calculator.js <add|subtract|multiply|divide> <num1> <num2>');
+  if (!operation) {
+    console.error('Usage:');
+    console.error('  node calculator.js <add|subtract|multiply|divide|modulo|power> <num1> <num2>');
+    console.error('  node calculator.js sqrt <num>');
+    process.exit(1);
+  }
+
+  if (operation === 'sqrt') {
+    if (isNaN(a)) {
+      console.error('Usage: node calculator.js sqrt <num>');
+      process.exit(1);
+    }
+  } else if (isNaN(a) || isNaN(b)) {
+    console.error('Usage: node calculator.js <add|subtract|multiply|divide|modulo|power> <num1> <num2>');
     process.exit(1);
   }
 
@@ -88,8 +100,11 @@ if (require.main === module) {
       case 'power':
         result = power(a, b);
         break;
+      case 'sqrt':
+        result = sqrt(a);
+        break;
       default:
-        console.error(`Unknown operation: "${operation}". Use add, subtract, multiply, divide, modulo, or power.`);
+        console.error(`Unknown operation: "${operation}". Use add, subtract, multiply, divide, modulo, power, or sqrt.`);
         process.exit(1);
     }
     console.log(`Result: ${result}`);
