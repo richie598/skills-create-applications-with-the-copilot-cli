@@ -2,16 +2,21 @@
  * Node.js CLI Calculator
  *
  * Supported operations:
- *   add      - Addition: returns the sum of two numbers
- *   subtract - Subtraction: returns the difference between two numbers
- *   multiply - Multiplication: returns the product of two numbers
- *   divide   - Division: returns the quotient of two numbers (handles divide-by-zero)
- *   modulo   - Modulo: returns the remainder of dividing two numbers
- *   power    - Power: returns a raised to the power of b
- *   sqrt     - Square Root: returns the square root of a number
+ *   add      - Addition: returns the sum of two numbers (requires 2 operands)
+ *   subtract - Subtraction: returns the difference between two numbers (requires 2 operands)
+ *   multiply - Multiplication: returns the product of two numbers (requires 2 operands)
+ *   divide   - Division: returns the quotient of two numbers (handles divide-by-zero, requires 2 operands)
+ *   modulo   - Modulo: returns the remainder of dividing two numbers (requires 2 operands)
+ *   power    - Power: returns a raised to the power of b (requires 2 operands)
+ *   sqrt     - Square Root: returns the square root of a number (requires 1 operand)
  *
- * Usage: node calculator.js <operation> <num1> <num2>
- * Example: node calculator.js add 4 2
+ * Usage:
+ *   Binary operations: node src/calculator.js <add|subtract|multiply|divide|modulo|power> <num1> <num2>
+ *   Unary operations:  node src/calculator.js sqrt <num>
+ *
+ * Example:
+ *   node src/calculator.js add 4 2
+ *   node src/calculator.js sqrt 9
  */
 
 // Addition: returns the sum of a and b
