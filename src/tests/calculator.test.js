@@ -1,13 +1,16 @@
 /**
  * Unit tests for calculator.js
  *
- * Covers all four supported operations:
+ * Covers all seven supported operations:
  *   - add      (addition)
  *   - subtract (subtraction)
  *   - multiply (multiplication)
  *   - divide   (division)
+ *   - modulo   (remainder)
+ *   - power    (exponentiation)
+ *   - sqrt     (square root)
  *
- * Includes image-based examples and edge cases such as division by zero,
+ * Includes examples and edge cases such as division by zero,
  * negative numbers, decimals, and zero inputs.
  */
 
